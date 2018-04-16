@@ -1,38 +1,49 @@
-﻿var app = angular.module("app", ['ngRoute']);
+﻿var app = angular.module("app", ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
 
-app.config(['$routeProvider',
-
-    function ($routeProvider) {
+app.config(function ($routeProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "/SPA/View/LoginView.html",
+                templateUrl: "/Views/LoginView.html",
                 controller: 'LoginController'
             })
             .when("/CreateAccount", {
-                templateUrl: "/SPA/View/CreateAccountView.html",
+                templateUrl: "/Views/CreateAccountView.html",
                 controller: 'CreateAccountController'
             })
             .when("/Summary", {
-                templateUrl: "/SPA/View/SummaryView.html",
+                templateUrl: "/Views/SummaryView.html",
                 controller: 'SummaryController'
             })
             .when("/NewJourney", {
-                templateUrl: "/SPA/View/NewJourneyView.html",
+                templateUrl: "/Views/NewJourneyView.html",
                 controller: 'NewJourneyController'
             })
             .when("/Report", {
-                templateUrl: "/SPA/View/JourneyReportView.html",
+                templateUrl: "/Views/JourneyReportView.html",
                 controller: 'JourneyReportController'
             })
             .when("/HandleVehicle", {
-                templateUrl: "/SPA/View/HandleVehicleView.html",
+                templateUrl: "/Views/HandleVehicleView.html",
                 controller: 'HandleVehicleController'
             })
             .when("/ChatSupport", {
-                templateUrl: "/SPA/View/ChatSupportView.html",
+                templateUrl: "/Views/ChatSupportView.html",
                 controller: 'ChatSupportController'
             })
-            .otherwise({
-                redirectTo: "/"
-            });
-    }]);
+            .otherwise({ redirectTo: "/" });
+    });
+
+// The settings for the Servicebase:
+var serviceBase = 'http://localhost:52891/';
+app.constant('ngAuthSettings', {
+    apiServiceBaseUri: serviceBase,
+    clientId: 'ngAuthApp'
+});
+
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
+});
+
+app.run(['authService', function (authService) {
+    authService.fillAuthData();
+}]);
