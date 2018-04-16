@@ -79,6 +79,7 @@
     <Content Include="Images\backgroundImage.jpeg" />
     <Content Include="Images\pageFavicon.jpeg" />
     <Content Include="Index.html" />
+    <Content Include="Less\MyStyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +89,6 @@
     <Folder Include="ChatSupport\" />
     <Folder Include="Controllers\" />
     <Folder Include="Includes\" />
-    <Folder Include="Less\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\" />
   </ItemGroup>
