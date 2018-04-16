@@ -104,6 +104,7 @@
     <Content Include="App.js" />
     <Content Include="Images\backgroundImage.jpeg" />
     <Content Include="Images\pageFavicon.jpeg" />
+    <Content Include="Includes\Menu.PartialView.html" />
     <Content Include="Index.html" />
     <Content Include="Less\MyStyleSheet.css" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -126,7 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Includes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
