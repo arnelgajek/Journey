@@ -2,7 +2,7 @@
     $scope.titleCreateAccount = "Skapa konto";
     //$scope.createAccountData = {};
 
-    var accountUrl = "http://localhost:53201/api/Account/Register";
+    var accountUrl = "http://localhost:53130/api/Account/Register";
 
     // Create new account:
     $scope.createAccount = function () {

@@ -1,4 +1,4 @@
-﻿var app = angular.module("app", ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
+﻿var app = angular.module("app", ['ngRoute'/*, 'LocalStorageModule', 'angular-loading-bar'*/]);
 
 app.config(function ($routeProvider) {
         $routeProvider
@@ -34,16 +34,16 @@ app.config(function ($routeProvider) {
     });
 
 // The settings for the Servicebase:
-var serviceBase = 'http://localhost:52891/';
-app.constant('ngAuthSettings', {
-    apiServiceBaseUri: serviceBase,
-    clientId: 'ngAuthApp'
-});
+//var serviceBase = 'http://localhost:53130/';
+//app.constant('ngAuthSettings', {
+//    apiServiceBaseUri: serviceBase,
+//    clientId: 'ngAuthApp'
+//});
 
-app.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('authInterceptorService');
-});
+//app.config(function ($httpProvider) {
+//    $httpProvider.interceptors.push('authInterceptorService');
+//});
 
-app.run(['authService', function (authService) {
-    authService.fillAuthData();
-}]);
+//app.run(['authService', function (authService) {
+//    authService.fillAuthData();
+//}]);
