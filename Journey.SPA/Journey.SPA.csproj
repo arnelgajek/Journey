@@ -102,6 +102,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.js" />
+    <Content Include="Controllers\ChatSupportController.js" />
+    <Content Include="Controllers\CreateAccountController.js" />
+    <Content Include="Controllers\HandleVehicleController.js" />
+    <Content Include="Controllers\JourneyReportController.js" />
+    <Content Include="Controllers\LoginController.js" />
+    <Content Include="Controllers\LogutController.js" />
+    <Content Include="Controllers\NewJourneyController.js" />
+    <Content Include="Controllers\SummaryController.js" />
     <Content Include="Images\backgroundImage.jpeg" />
     <Content Include="Images\pageFavicon.jpeg" />
     <Content Include="Includes\Menu.PartialView.html" />
@@ -125,9 +133,7 @@
     <Compile Include="ChatSupport\ChatHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
