@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.js" />
+    <Content Include="authComplete.html" />
     <Content Include="Controllers\ChatSupportController.js" />
     <Content Include="Controllers\CreateAccountController.js" />
     <Content Include="Controllers\HandleVehicleController.js" />
