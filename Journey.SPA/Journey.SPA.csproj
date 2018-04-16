@@ -75,10 +75,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App.js" />
+    <Content Include="Index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Images\" />
+    <Folder Include="Includes\" />
+    <Folder Include="Less\" />
+    <Folder Include="SupportChat\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
