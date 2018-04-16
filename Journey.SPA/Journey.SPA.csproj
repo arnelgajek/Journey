@@ -83,11 +83,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ChatSupport\" />
     <Folder Include="Controllers\" />
     <Folder Include="Images\" />
     <Folder Include="Includes\" />
     <Folder Include="Less\" />
-    <Folder Include="SupportChat\" />
+    <Folder Include="Scripts\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
