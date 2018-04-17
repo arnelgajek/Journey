@@ -14,7 +14,7 @@
         }).then(function (data) {
             $location.url('/Summary');
         }, function (error) {
-            console.log(error);
+            console.log(error); 
         });
     };
 });

@@ -5,6 +5,8 @@ using System.Web.Http;
 using Journey.API.Providers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Owin.Security.Facebook;
+using Microsoft.Owin.Security.Google;
 using Owin;
 
 [assembly: OwinStartup(typeof(Journey.API.Startup))]
@@ -14,8 +16,8 @@ namespace Journey.API
     public class Startup
     {
         public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
-        //public static GoogleOAuth2AuthenticationOptions googleAuthOptions { get; private set; }
-        //public static FacebookAuthenticationOptions facebookAuthOptions { get; private set; }
+        public static GoogleOAuth2AuthenticationOptions GoogleAuthOptions { get; private set; }
+        public static FacebookAuthenticationOptions FacebookAuthOptions { get; private set; }
 
         public void Configuration(IAppBuilder app)
         {
@@ -28,7 +30,7 @@ namespace Journey.API
             WebApiConfig.Register(config);
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AuthContext, AngularJSAuthentication.API.Migrations.Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<AuthContext, Journey.API.Migrations.Configuration>());
         }
 
         public void ConfigureOAuth(IAppBuilder app)
@@ -51,23 +53,23 @@ namespace Journey.API
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
             app.UseOAuthBearerAuthentication(OAuthBearerOptions);
 
-            //Configure Google External Login
-            //googleAuthOptions = new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "xxxxxx",
-            //    ClientSecret = "xxxxxx",
-            //    Provider = new GoogleAuthProvider()
-            //};
-            //app.UseGoogleAuthentication(googleAuthOptions);
+            // Configure Google External Login
+            GoogleAuthOptions = new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "xxxxxx",
+                ClientSecret = "xxxxxx",
+                Provider = new GoogleAuthProvider()
+            };
+            app.UseGoogleAuthentication(GoogleAuthOptions);
 
-            //Configure Facebook External Login
-            //facebookAuthOptions = new FacebookAuthenticationOptions()
-            //{
-            //    AppId = "xxxxxx",
-            //    AppSecret = "xxxxxx",
-            //    Provider = new FacebookAuthProvider()
-            //};
-            //app.UseFacebookAuthentication(facebookAuthOptions);
+            // Configure Facebook External Login
+            FacebookAuthOptions = new FacebookAuthenticationOptions()
+            {
+                AppId = "xxxxxx",
+                AppSecret = "xxxxxx",
+                Provider = new FacebookAuthProvider()
+            };
+            app.UseFacebookAuthentication(FacebookAuthOptions);
 
         }
     }
