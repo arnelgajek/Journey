@@ -123,6 +123,7 @@
     <Compile Include="Controllers\RefreshTokensController.cs" />
     <Compile Include="Controllers\TripsController.cs" />
     <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\RefreshToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
