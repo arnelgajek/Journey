@@ -9,7 +9,7 @@ namespace Journey.API.Models
     public class UserModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         [Required]
@@ -23,5 +23,4 @@ namespace Journey.API.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-}
 }
