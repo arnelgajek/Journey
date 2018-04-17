@@ -1,4 +1,4 @@
-﻿//using Journey.API.Models;
+﻿using Journey.API.Models;
 //using Journey.API.Results;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
