@@ -9,18 +9,18 @@ namespace Journey.API.Models
     public class UserModel
     {
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "Användarnamn")]
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Lösenordet {0} måste bestå av minst {2} tecken.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Lösenord")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Bekräfta lösenord")]
+        [Compare("Password", ErrorMessage = "Lösenordet matchar inte.")]
         public string ConfirmPassword { get; set; }
     }
 }

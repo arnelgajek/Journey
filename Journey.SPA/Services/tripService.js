@@ -1,19 +1,18 @@
-﻿//'use strict';
-//app.factory('tripService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
+﻿'use strict';
+app.factory('tripService', ['$http', function ($http) {
 
-//    var serviceBase = ngAuthSettings.apiServiceBaseUri;
+    var serviceBase = 'http://localhost:52891/';
+    var tripServiceFactory = {};
 
-//    var tripsServiceFactory = {};
+    var _getTrips = function () {
 
-//    var _getTrips = function () {
+        return $http.get(serviceBase + 'api/trips').then(function (results) {
+            return results;
+        });
+    };
 
-//        return $http.get(serviceBase + 'api/trips').then(function (results) {
-//            return results;
-//        });
-//    };
+    tripServiceFactory.getTrips = _getTrips;
 
-//    tripsServiceFactory.getTrips = _getTrips;
+    return tripServiceFactory;
 
-//    return tripsServiceFactory;
-
-//}]);
+}]);

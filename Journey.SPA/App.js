@@ -1,4 +1,4 @@
-﻿var app = angular.module("app", ['ngRoute'/*, 'LocalStorageModule', 'angular-loading-bar'*/]);
+﻿var app = angular.module("app", ['ngRoute', 'LocalStorageModule']);
 
 app.config(function ($routeProvider) {
         $routeProvider
@@ -31,19 +31,12 @@ app.config(function ($routeProvider) {
                 controller: 'ChatSupportController'
             })
             .otherwise({ redirectTo: "/" });
-    });
+});
 
-// The settings for the Servicebase:
-//var serviceBase = 'http://localhost:53130/';
-//app.constant('ngAuthSettings', {
-//    apiServiceBaseUri: serviceBase,
-//    clientId: 'ngAuthApp'
-//});
+app.run(['authService', function (authService) {
+    authService.fillAuthData();
+}]);
 
-//app.config(function ($httpProvider) {
-//    $httpProvider.interceptors.push('authInterceptorService');
-//});
-
-//app.run(['authService', function (authService) {
-//    authService.fillAuthData();
-//}]);
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
+});
