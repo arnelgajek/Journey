@@ -1,6 +1,6 @@
 ﻿'use strict';
 app.controller('CreateAccountController', ['$scope', '$location', '$timeout', 'authService', function ($scope, $location, $timeout, authService) {
-    $scope.titleCreateAccount = "Skapa Konto";
+    $scope.titleCreateAccount = "Create Account";
 
     $scope.savedSuccessfully = false;
     $scope.message = "";
@@ -16,7 +16,7 @@ app.controller('CreateAccountController', ['$scope', '$location', '$timeout', 'a
         authService.saveRegistration($scope.registration).then(function (response) {
 
             $scope.savedSuccessfully = true;
-            $scope.message = "Kontot har skapats, du kommer att bli omdirigerad till login-sidan alldeles strax.";
+            $scope.message = 'User has been registered successfully, you will be redicted to login page in 2 seconds';
             startTimer();
 
         },
@@ -27,7 +27,7 @@ app.controller('CreateAccountController', ['$scope', '$location', '$timeout', 'a
                         errors.push(response.data.modelState[key][i]);
                     }
                 }
-                $scope.message = "Kunde inte registrera konto på grund av:" + errors.join(' ');
+                $scope.message = "Failed to register user due to:" + errors.join(' ');
             });
     };
 

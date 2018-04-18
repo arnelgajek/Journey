@@ -1,6 +1,6 @@
 ﻿app.controller('HandleVehicleController', function ($scope, $http, $route) {
-    $scope.titleHandleVehicle = "Lägg till/Hantera fordon";
-    $scope.addNewVehicleTitle = "Lägg till nytt fordon";
+    $scope.titleHandleVehicle = "Add new/Handle vehicle";
+    $scope.addNewVehicleTitle = "Add new vehicle";
     $scope.formData = {};
 
     var vehicleUrl = "http://localhost:53130/api/vehicle";

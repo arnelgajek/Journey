@@ -1,5 +1,4 @@
-﻿using Journey.SPA.Entities;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,9 +14,5 @@ namespace Journey.API
         {
 
         }
-
-        public DbSet<Client> Clients { get; set; }
-
-        public DbSet<RefreshToken> RefreshTokens { get; set; }
     }
 }

@@ -4,28 +4,28 @@
 </div>
 <div class="loginBox">
     <form class="form-login" role="form">
-        <input type="email" class="form-control" placeholder="Mailadress:" data-ng-model="loginData.userName" required autofocus>
-        <input type="password" class="form-control" placeholder="Lösenord:" data-ng-model="loginData.password" required>
-        <button class="btn btn-default" type="submit" data-ng-click="login()">Logga in</button>
+        <input type="email" class="form-control" placeholder="Email:" data-ng-model="loginData.userName" required autofocus>
+        <input type="password" class="form-control" placeholder="Password:" data-ng-model="loginData.password" required>
+        <button class="btn btn-default" type="submit" data-ng-click="login()">Sign in</button>
         <br />
         <div data-ng-hide="message == ''" class="alert alert-danger">
             {{message}}
         </div>
         <br />
         <br />
-        <a href="">Glömt lösenord?</a>
+        <a href="">Forgotten password?</a>
         <br />
-        <a href="Index.html#!/CreateAccount">Skapa nytt konto.</a>
+        <a href="Index.html#!/CreateAccount">Create new account</a>
     </form>
 </div>
 
 <ul class="pager">
-    <li><a href="Index.html#!/Summary">Översikt</a></li>
-    <li><a href="Index.html#!/NewJourney">Registrera Ny Resa</a></li>
-    <li><a href="Index.html#!/Report">Rapport</a></li>
+    <li><a href="Index.html#!/Summary">Summary</a></li>
+    <li><a href="Index.html#!/NewJourney">Register new journey</a></li>
+    <li><a href="Index.html#!/Report">Report</a></li>
     <li><a href="Index.html#!/ChatSupport">Support</a></li>
-    <li><a href="Index.html#!/HandleVehicle">Hantera Fordon</a></li>
-    <li><a href="Index.html#!">Logga Ut</a></li>
+    <li><a href="Index.html#!/HandleVehicle">Handle vehicle</a></li>
+    <li><a href="Index.html#!">Sign out</a></li>
 </ul>
 
 <!--<div class="loginBox">

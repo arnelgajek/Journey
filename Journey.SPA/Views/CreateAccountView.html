@@ -5,10 +5,10 @@
 
 <div class="createAccountBox">
     <form class="form-login" role="form">
-        <input type="email" class="form-control" placeholder="Mailadress:" data-ng-model="registration.userName" required autofocus>
-        <input type="password" class="form-control" placeholder="Lösenord:" data-ng-model="registration.password" required>
-        <input type="password" class="form-control" placeholder="Upprepa lösenord:" data-ng-model="registration.confirmPassword" required>
-        <button class="btn btn-default" type="submit" data-ng-click="signUp()">Godkänn</button>
+        <input type="email" class="form-control" placeholder="Email:" data-ng-model="registration.userName" required autofocus>
+        <input type="password" class="form-control" placeholder="Password:" data-ng-model="registration.password" required>
+        <input type="password" class="form-control" placeholder="Confirm Password:" data-ng-model="registration.confirmPassword" required>
+        <button class="btn btn-default" type="submit" data-ng-click="signUp()">Submit</button>
         <br />
         <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
             {{message}}

@@ -1,5 +1,5 @@
 ﻿app.controller('NewJourneyController', function ($scope) {
-    $scope.titleNewJourney = "Registrera ny resa";
+    $scope.titleNewJourney = "Register new Journey";
 
     // Create new journey:
     //$scope.createAccount = function () {
