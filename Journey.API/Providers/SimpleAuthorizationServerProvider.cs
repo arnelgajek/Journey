@@ -28,7 +28,7 @@ namespace Journey.API.Providers
 
                 if (user == null)
                 {
-                    context.SetError("invalid_grant", "Användarnamnet eller lösenordet stämmer inte.");
+                    context.SetError("invalid_grant", "The username or password is incorrect.");
                     return;
                 }
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Web.Http;
 
 namespace Journey.API.Controllers
@@ -12,41 +13,11 @@ namespace Journey.API.Controllers
         [Authorize]
         public List<string> GetTrips()
         {
-            return new List<string> { "Doboj", "Ljungby", "Helsingborg" };
+            ClaimsPrincipal principal = Request.GetRequestContext().Principal as ClaimsPrincipal;
+            var userName = principal.Claims.Where(c => c.Type == "user_name").Single().Value;
+
+            return new List<string> { "Doboj", "Ljungby", "Helsingborg", userName };
         }
     }
-    //[RoutePrefix("api/Trips")]
-    //public class TripsController : ApiController
-    //{
-    //    [Authorize]
-    //    [Route("")]
-    //    public IHttpActionResult Get()
-    //    {
-    //        return Ok(Trip.CreateTrips());
-    //    }
-    //}
-
-    #region Helpers
-
-    //public class Trip
-    //{
-    //    public int Id { get; set; }
-
-    //    public string Location { get; set; }
-
-    //    public int TotalKm { get; set; }
-
-    //    public static List<Trip> CreateTrips()
-    //    {
-    //        List<Trip> TripList = new List<Trip>
-    //        {
-    //            new Trip {Id = 1, Location = "Ljungby", TotalKm = 69 }
-    //        };
-
-    //        return TripList;
-    //    }
-    //}
-
-    #endregion
 }
 
